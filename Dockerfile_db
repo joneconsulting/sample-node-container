@@ -1,0 +1,8 @@
+FROM mariadb
+
+ENV MARIADB_DATABASE nodedb
+ENV MARIADB_ROOT_PASSWORD test1357 
+
+COPY ./db/docker-entrypoint-initdb.d/init.sql /docker-entrypoint-initdb.d
+
+CMD ["mysqld"]
